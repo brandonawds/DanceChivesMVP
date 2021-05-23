@@ -1,0 +1,16 @@
+.navBar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 30px;
+}
+
+.home-title {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.home-cont {
+  display: grid;
+  grid-gap: 40px;
+}
