@@ -17,6 +17,9 @@ import LockingInfo from "./DanceStyles/LockingInfo";
 import PoppingInfo from "./DanceStyles/PoppingInfo";
 import VogueingInfo from "./DanceStyles/VogueingInfo";
 import WaackingInfo from "./DanceStyles/WaackingInfo";
+import FindEvents from "./EventComponents/FindEvents";
+import RecentEvents from "./EventComponents/RecentEvents";
+import SubmitEventInfo from "./EventComponents/SubmitEventInfo";
 
 const RoutesTree = () => {
   return (
@@ -64,14 +67,14 @@ const RoutesTree = () => {
         </Route>
 
         {/* event tab links */}
-        <Route path={`/waacking`}>
-          <WaackingInfo />
+        <Route path={`/find_events`}>
+          <FindEvents />
         </Route>
-        <Route path={`/vogueing`}>
-          <VogueingInfo />
+        <Route path={`/recent_events`}>
+          <RecentEvents />
         </Route>
-        <Route path={`/locking`}>
-          <LockingInfo />
+        <Route path={`/submit_event_info`}>
+          <SubmitEventInfo />
         </Route>
 
         <Route path="/">
