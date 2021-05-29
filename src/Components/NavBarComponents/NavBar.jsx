@@ -144,7 +144,20 @@ const NavBar = () => {
             </div>
           </div>
         </div>
-        <Link to={"/"}>Home</Link>
+        <div class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button
+              class="button"
+              aria-haspopup="true"
+              aria-controls="dropdown-menu4"
+              onClick={() => handleRedirect("/")}
+            >
+              <span>Home</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
 
         <SearchBar />
       </div>

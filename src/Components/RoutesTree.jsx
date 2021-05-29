@@ -37,9 +37,10 @@ const RoutesTree = () => {
         <Route path="/contact">
           <ContactPage />
         </Route>
-        <Route path="/styles">
+        {/* do we want a dance styles page at all? kinda seems unecessary since we have the hover dropdown */}
+        {/* <Route path="/styles">
           <DanceStyles />
-        </Route>
+        </Route> */}
         <Route path={`/hip-hop`}>
           <HipHopInfo />
         </Route>
@@ -52,6 +53,17 @@ const RoutesTree = () => {
         <Route path={`/house`}>
           <HouseInfo />
         </Route>
+        <Route path={`/waacking`}>
+          <WaackingInfo />
+        </Route>
+        <Route path={`/vogueing`}>
+          <VogueingInfo />
+        </Route>
+        <Route path={`/locking`}>
+          <LockingInfo />
+        </Route>
+
+        {/* event tab links */}
         <Route path={`/waacking`}>
           <WaackingInfo />
         </Route>
