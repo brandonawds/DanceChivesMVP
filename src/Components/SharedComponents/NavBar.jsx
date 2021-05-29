@@ -63,9 +63,13 @@ const NavBar = () => {
 
   return (
     <div className="navBar">
-      <p>Logo</p>
+      <img
+        className="logo-img"
+        src="dance-chives-logo.png"
+        alt="DC letters in blue and green"
+      />
       <div className="links">
-        <div className={toggleStyles ? "dropdown is-active" : "dropdown"}>
+        <div className={"dropdown is-hoverable"}>
           <div className="dropdown-trigger">
             <button
               className="button"
@@ -117,7 +121,7 @@ const NavBar = () => {
             </div>
           </div>
         </div>
-        <div className={toggleEvents ? "dropdown is-active" : "dropdown"}>
+        <div className={"dropdown is-hoverable"}>
           <div className="dropdown-trigger">
             <button
               className="button"

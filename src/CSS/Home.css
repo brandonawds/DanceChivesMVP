@@ -1,0 +1,9 @@
+.home-title {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.home-cont {
+  display: grid;
+  grid-gap: 40px;
+}

@@ -1,9 +1,5 @@
-.home-title {
-  display: grid;
-  grid-gap: 20px;
-}
-
-.home-cont {
-  display: grid;
-  grid-gap: 40px;
-}
+@import "./NavBar.css";
+@import "./Home.css";
+@import "./LoginForm.css";
+@import "./SignupForm.css";
+@import "./Footer.css";
