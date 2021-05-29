@@ -17,6 +17,11 @@ import firebase from "../../utils/firebase";
 
 const NavBar = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
+
+  /*I'm thinking we can put the logic for checking signin within either 
+  an HOC or use a context hook --> i need to read more about the hook though 
+  --> just to keep the NavBar component a bit cleaner*/
+
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
