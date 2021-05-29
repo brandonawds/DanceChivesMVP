@@ -158,6 +158,7 @@ const NavBar = () => {
               </span>
             </button>
           </div>
+        </div>
 
         <SearchBar />
       </div>
