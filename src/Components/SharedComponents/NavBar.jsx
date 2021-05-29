@@ -145,7 +145,7 @@ const NavBar = () => {
         </div>
       </div>
       <Link to={"/"}>Home</Link>
-      <Link to={"/styles"}>Styles</Link>
+      {/* <Link to={"/styles"}>Styles</Link> */}
       <Link to={"/events"}>Events</Link>
       <SearchBar />
       {loggedInUser ? (
