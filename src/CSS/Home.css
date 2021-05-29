@@ -6,4 +6,5 @@
 .home-cont {
   display: grid;
   grid-gap: 40px;
+  margin: 30px;
 }

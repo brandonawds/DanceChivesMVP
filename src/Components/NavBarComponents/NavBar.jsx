@@ -63,11 +63,6 @@ const NavBar = () => {
 
   return (
     <div className="navBar">
-      <img
-        className="logo-img"
-        src="dance-chives-logo.png"
-        alt="DC letters in blue and green"
-      />
       <div className="links">
         <div className={"dropdown is-hoverable"}>
           <div className="dropdown-trigger">
@@ -153,11 +148,11 @@ const NavBar = () => {
 
         <SearchBar />
       </div>
-      {loggedInUser ? (
+      {/* {loggedInUser ? (
         <button onClick={signOut}>Logout </button>
       ) : (
         <button onClick={Login}>Sign In</button>
-      )}
+      )} */}
     </div>
   );
 };

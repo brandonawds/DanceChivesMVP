@@ -5,7 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./Home/Home";
 import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
-import Header from "./SharedComponents/Header";
+import Header from "./HeaderComponents/Header";
 import ResultsPage from "./Results/ResultsPage";
 import AboutPage from "./About/About";
 import ContactPage from "./Contact/Contact";
