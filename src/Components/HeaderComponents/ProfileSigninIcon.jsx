@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-const ProfileSigninIcon = () => {
-  return <div>i am a circle icon</div>;
+const ProfileSigninIcon = (props) => {
+  const { userName } = props;
+
+  return <div>{userName}</div>;
 };
 
 export default ProfileSigninIcon;
+
+ProfileSigninIcon.defaultProps = {
+  userName: "J",
+};
