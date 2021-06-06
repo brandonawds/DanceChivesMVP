@@ -5,11 +5,10 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./Home/Home";
 import Signup from "./Signup/Signup";
 import Login from "./Login/Login";
-import Header from "./SharedComponents/Header";
 import ResultsPage from "./Results/ResultsPage";
 import AboutPage from "./About/About";
 import ContactPage from "./Contact/Contact";
-import DanceStyles from "./DanceStyles/DanceStyles";
+// import DanceStyles from "./DanceStyles/DanceStyles";
 import BreakingInfo from "./DanceStyles/BreakingInfo";
 import HipHopInfo from "./DanceStyles/HipHopInfo";
 import HouseInfo from "./DanceStyles/HouseInfo";
@@ -17,6 +16,9 @@ import LockingInfo from "./DanceStyles/LockingInfo";
 import PoppingInfo from "./DanceStyles/PoppingInfo";
 import VogueingInfo from "./DanceStyles/VogueingInfo";
 import WaackingInfo from "./DanceStyles/WaackingInfo";
+import FindEvents from "./EventComponents/FindEvents";
+import RecentEvents from "./EventComponents/RecentEvents";
+import SubmitEventInfo from "./EventComponents/SubmitEventInfo";
 
 const RoutesTree = () => {
   return (
@@ -37,9 +39,10 @@ const RoutesTree = () => {
         <Route path="/contact">
           <ContactPage />
         </Route>
-        <Route path="/styles">
+        {/* do we want a dance styles page at all? kinda seems unecessary since we have the hover dropdown */}
+        {/* <Route path="/styles">
           <DanceStyles />
-        </Route>
+        </Route> */}
         <Route path={`/hip-hop`}>
           <HipHopInfo />
         </Route>
@@ -60,6 +63,17 @@ const RoutesTree = () => {
         </Route>
         <Route path={`/locking`}>
           <LockingInfo />
+        </Route>
+
+        {/* event tab links */}
+        <Route path={`/find_events`}>
+          <FindEvents />
+        </Route>
+        <Route path={`/recent_events`}>
+          <RecentEvents />
+        </Route>
+        <Route path={`/submit_event_info`}>
+          <SubmitEventInfo />
         </Route>
 
         <Route path="/">
