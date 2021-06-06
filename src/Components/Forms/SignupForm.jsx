@@ -9,24 +9,68 @@ const SignupForm = (props) => {
 
   // Declare a new state variable, which we'll call "count"
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (evt) => {
+    const db = firebase.firestore();
     evt.preventDefault();
-    console.log(`Submitting Email ${email}`);
-    console.log(`Submitting Password ${password}`);
 
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        console.log("You have successfully registered.");
-        // Signed in
-        var user = userCredential.user;
-        // ...
-        history.push("/");
-      })
-      .catch((error) => console.log(error));
+    if (email && username && password) {
+      console.log(`Submitting Email ${email}`);
+      console.log(`Submitting Username ${username}`);
+      console.log(`Submitting Password ${password}`);
+
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Add a new document with a generated id.
+          db.collection("users")
+            .add({
+              avatar: "",
+              description: "",
+              tags: [],
+              type: "user",
+              username: username,
+            })
+            .then((docRef) => {
+              console.log("Document written with ID: ", docRef.id);
+
+              firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                  // User is signed in.
+                  console.log(user);
+                  user
+                    .updateProfile({
+                      displayName: username,
+                    })
+                    .then(function () {
+                      // Update successful.
+                      console.log("profile updated.");
+                    })
+                    .catch(function (error) {
+                      // An error happened.
+                    });
+                } else {
+                  // No user is signed in.
+                }
+              });
+            })
+            .catch((error) => {
+              console.error("Error adding document: ", error);
+            });
+          // Signed in
+
+          console.log(userCredential);
+          // ...
+          history.push("/");
+        })
+        .catch((error) => console.log(error));
+    } else {
+      //Validations
+      alert("Invalid credentials, please ensure all fields are filled");
+    }
   };
 
   return (
@@ -40,6 +84,23 @@ const SignupForm = (props) => {
               placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+            />
+            <span className="icon is-small is-left">
+              <i className="fas fa-envelope"></i>
+            </span>
+            <span className="icon is-small is-right">
+              <i className="fas fa-check"></i>
+            </span>
+          </p>
+        </div>
+        <div className="field ">
+          <p className="control has-icons-left has-icons-right">
+            <input
+              className="input"
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
             <span className="icon is-small is-left">
               <i className="fas fa-envelope"></i>
