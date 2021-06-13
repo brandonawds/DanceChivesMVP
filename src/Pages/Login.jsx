@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SignupForm from "../Forms/SignupForm";
+import LoginForm from "../Components/Forms/LoginForm";
 // *react-router imports
 import {
   useHistory,
@@ -8,7 +8,7 @@ import {
   useRouteMatch,
 } from "react-router-dom";
 
-const Signup = (props) => {
+const Login = (props) => {
   // React Router Hooks
   let history = useHistory();
   let location = useLocation();
@@ -16,13 +16,13 @@ const Signup = (props) => {
   let match = useRouteMatch("//:slug");
 
   return (
-    <div className="signup-cont">
-      I am a signup page
-      <div className="signupFormParent-cont">
-        <SignupForm />
+    <div className="Login-cont">
+      I am a login page
+      <div className="LoginParent-cont">
+        <LoginForm />
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default Login;

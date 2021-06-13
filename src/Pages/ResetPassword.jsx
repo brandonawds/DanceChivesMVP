@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ResetPasswordForm from '../Forms/ResetPasswordForm';
+import ResetPasswordForm from '../Components/Forms/ResetPasswordForm';
 // *react-router imports
 import {
     useHistory,
