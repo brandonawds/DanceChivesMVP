@@ -5,27 +5,25 @@ import { Link } from 'react-router-dom';
 
 import firebase from '../../utils/firebase';
 
-const LoginForm = (props) => {
+const ResetPasswordForm = (props) => {
     const history = useHistory();
 
     // Declare a new state variable, which we'll call "count"
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
 
-    const SignIn = (evt) => {
+    const resetPassword = () => {
         firebase
             .auth()
-            .signInWithEmailAndPassword(email, password)
-            .then((userCredential) => {
-                // Signed in
-                var user = userCredential.user;
-                // ...
-
-                history.push('/');
+            .sendPasswordResetEmail(email)
+            .then(() => {
+                // Password reset email sent!
+                // ..
+                console.log('Password reset email sent!');
             })
             .catch((error) => {
                 var errorCode = error.code;
                 var errorMessage = error.message;
+                // ..
             });
     };
 
@@ -48,34 +46,19 @@ const LoginForm = (props) => {
                     </span>
                 </p>
             </div>
-            <div className="field">
-                <p className="control has-icons-left">
-                    <input
-                        className="input"
-                        type="password"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <span className="icon is-small is-left">
-                        <i className="fas fa-lock"></i>
-                    </span>
-                </p>
-            </div>
+
             <div className="field">
                 <p className="control">
-                    <button className="button is-success" onClick={SignIn}>
-                        Login
+                    <button
+                        className="button is-success"
+                        onClick={resetPassword}
+                    >
+                        Reset Password
                     </button>
                 </p>
-                <Link to="/resetpassword">Forgot Password?</Link>
-                <div className="signup">
-                    <p>Don't have an account?</p>
-                    <Link to="/signup">Register now</Link>
-                </div>
             </div>
         </div>
     );
 };
 
-export default LoginForm;
+export default ResetPasswordForm;
