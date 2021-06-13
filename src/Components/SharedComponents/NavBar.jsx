@@ -171,6 +171,7 @@ const NavBar = () => {
             <div id="username">
                 {' '}
                 {loggedInUser ? loggedInUser : <p>Guest</p>}
+                hello
             </div>
         </div>
     );
